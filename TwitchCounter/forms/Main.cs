@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TwitchCounter.forms;
 
 namespace TwitchCounter
 {
@@ -79,6 +80,8 @@ namespace TwitchCounter
             alwaysOnTopToolStripMenuItem.Checked = false; //initializes always on top to false
 
             checkOutput();
+
+            AcceptButton = btn_update; //Allows the user to press Enter to click the update button
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -129,6 +132,12 @@ namespace TwitchCounter
             helpPage.Show();
         }
 
+        private void optionsPageToolStripMenuItem_Click(object sender, EventArgs e) //shows the options page/form
+        {
+            Form optionsPage = new Options();
+            optionsPage.Show();
+        }
+
         private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e) //checks if always on top is checked or not and stores the result in checkBool.
         {
             
@@ -150,5 +159,6 @@ namespace TwitchCounter
             }
             
         }
+
     }
 }

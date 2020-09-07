@@ -38,6 +38,8 @@
             this.lbl_idkman = new System.Windows.Forms.Label();
             this.lbl_sourcecodeavail = new System.Windows.Forms.Label();
             this.lbl_sourceavailgithub = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.link_github = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lbl_about
@@ -141,12 +143,38 @@
     "f you downloaded this anywhere else, delete it immediately and let me know there" +
     ".\r\n";
             // 
+            // label1
+            // 
+            this.label1.AutoEllipsis = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 556);
+            this.label1.MaximumSize = new System.Drawing.Size(500, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 22);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Created by Nick Shockey";
+            // 
+            // link_github
+            // 
+            this.link_github.AutoSize = true;
+            this.link_github.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_github.Location = new System.Drawing.Point(484, 556);
+            this.link_github.Name = "link_github";
+            this.link_github.Size = new System.Drawing.Size(65, 22);
+            this.link_github.TabIndex = 10;
+            this.link_github.TabStop = true;
+            this.link_github.Text = "Github";
+            this.link_github.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_github_LinkClicked);
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(561, 598);
+            this.Controls.Add(this.link_github);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_sourceavailgithub);
             this.Controls.Add(this.lbl_sourcecodeavail);
             this.Controls.Add(this.lbl_idkman);
@@ -175,5 +203,7 @@
         private System.Windows.Forms.Label lbl_idkman;
         private System.Windows.Forms.Label lbl_sourcecodeavail;
         private System.Windows.Forms.Label lbl_sourceavailgithub;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel link_github;
     }
 }

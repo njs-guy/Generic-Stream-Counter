@@ -25,5 +25,9 @@ namespace TwitchCounter
             
         }
 
+        private void link_github_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/njshockey/Generic-Twitch-Counter");
+        }
     }
 }

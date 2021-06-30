@@ -38,12 +38,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gr_preview = new System.Windows.Forms.GroupBox();
-            this.optionsPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_addOne = new System.Windows.Forms.Button();
+            this.btn_minusOne = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.num_counter)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gr_preview.SuspendLayout();
@@ -108,6 +110,12 @@
             resources.ApplyResources(this.alwaysOnTopToolStripMenuItem, "alwaysOnTopToolStripMenuItem");
             this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
+            // optionsPageToolStripMenuItem
+            // 
+            this.optionsPageToolStripMenuItem.Name = "optionsPageToolStripMenuItem";
+            resources.ApplyResources(this.optionsPageToolStripMenuItem, "optionsPageToolStripMenuItem");
+            this.optionsPageToolStripMenuItem.Click += new System.EventHandler(this.optionsPageToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -138,16 +146,26 @@
             this.gr_preview.Name = "gr_preview";
             this.gr_preview.TabStop = false;
             // 
-            // optionsPageToolStripMenuItem
+            // btn_addOne
             // 
-            this.optionsPageToolStripMenuItem.Name = "optionsPageToolStripMenuItem";
-            resources.ApplyResources(this.optionsPageToolStripMenuItem, "optionsPageToolStripMenuItem");
-            this.optionsPageToolStripMenuItem.Click += new System.EventHandler(this.optionsPageToolStripMenuItem_Click);
+            resources.ApplyResources(this.btn_addOne, "btn_addOne");
+            this.btn_addOne.Name = "btn_addOne";
+            this.btn_addOne.UseVisualStyleBackColor = true;
+            this.btn_addOne.Click += new System.EventHandler(this.btn_addOne_Click);
+            // 
+            // btn_minusOne
+            // 
+            resources.ApplyResources(this.btn_minusOne, "btn_minusOne");
+            this.btn_minusOne.Name = "btn_minusOne";
+            this.btn_minusOne.UseVisualStyleBackColor = true;
+            this.btn_minusOne.Click += new System.EventHandler(this.btn_minusOne_Click);
             // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_minusOne);
+            this.Controls.Add(this.btn_addOne);
             this.Controls.Add(this.gr_preview);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.num_counter);
@@ -185,6 +203,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.GroupBox gr_preview;
         private System.Windows.Forms.ToolStripMenuItem optionsPageToolStripMenuItem;
+        private System.Windows.Forms.Button btn_addOne;
+        private System.Windows.Forms.Button btn_minusOne;
     }
 }
 

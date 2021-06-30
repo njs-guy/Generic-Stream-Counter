@@ -74,6 +74,36 @@ namespace TwitchCounter
             
         }
 
+        private void updateOutput(string text, decimal count) //Updates the output txt and preview
+        {
+            //Converts the counted number to a string, and combines the two to output to preview and file.
+            textString = text;
+            counterNum = Convert.ToInt32(count);
+
+            output = textString + " " + counterNum.ToString();
+
+            //actual writing to file and preview
+
+            bool result = false; //initialize to false
+            for (int i = 0; i < 3; i++) //checks three times to avoid infinite loop
+            {
+                result = checkOutput();
+
+                if (result) //if file exists, write output
+                {
+                    writeOutput(output);
+                    i = 3; //end loop
+                }
+                else //if file doesn't exist, create it and try again
+                {
+                    if (i == 3)//if the loop is supposed to end and file still cannot be written, output error
+                    {
+                        ioErrorMessage();
+                    }
+                }
+            }
+        }
+
 
         private void Main_Load(object sender, EventArgs e) //on load
         {
@@ -86,6 +116,9 @@ namespace TwitchCounter
 
         private void btn_update_Click(object sender, EventArgs e)
         {
+            updateOutput(txt_text.Text, num_counter.Value);
+
+            /*
             //When update button is clicked, it converts the counted number to a string,
             //and combines the two to output to preview and file.
             textString = txt_text.Text;
@@ -113,6 +146,19 @@ namespace TwitchCounter
                     }
                 }
             }
+            */
+        }
+
+        private void btn_addOne_Click(object sender, EventArgs e)
+        {
+            updateOutput(txt_text.Text, num_counter.Value + 1);
+            num_counter.Value += 1;
+        }
+
+        private void btn_minusOne_Click(object sender, EventArgs e)
+        {
+            updateOutput(txt_text.Text, num_counter.Value - 1);
+            num_counter.Value -= 1;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) //closes the application
@@ -159,6 +205,6 @@ namespace TwitchCounter
             }
             
         }
-
+        
     }
 }

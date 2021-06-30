@@ -11,6 +11,7 @@ Generic Twitch Counter (GTC) is a counter for Windows to count things on a Twitc
 - [ ] Redo help and about pages (they look pretty bad).
 - [ ] Options page
 - [ ] Make icon, logo, and other assets
+- [ ] Universal hotkeys
 - [ ] Add dark mode
 - [ ] Change where text file is saved. Be able to turn off saving to text file.
 - [ ] Better documentation

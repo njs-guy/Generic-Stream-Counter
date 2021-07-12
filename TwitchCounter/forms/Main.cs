@@ -74,11 +74,11 @@ namespace TwitchCounter
             
         }
 
-        private void updateOutput(string text, decimal count) //Updates the output txt and preview
+        private void updateOutput() //Updates the output txt and preview
         {
             //Converts the counted number to a string, and combines the two to output to preview and file.
-            textString = text;
-            counterNum = Convert.ToInt32(count);
+            textString = txt_text.Text;
+            counterNum = Convert.ToInt32(num_counter.Value);
 
             output = textString + " " + counterNum.ToString();
 
@@ -116,49 +116,38 @@ namespace TwitchCounter
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            updateOutput(txt_text.Text, num_counter.Value);
+            updateOutput();
+        }
 
-            /*
-            //When update button is clicked, it converts the counted number to a string,
-            //and combines the two to output to preview and file.
-            textString = txt_text.Text;
-            counterNum = Convert.ToInt32(num_counter.Value);
+        private void btn_addOne_Click(object sender, EventArgs e) //When +1 is clicked
+        {
+            decimal targetValue = num_counter.Value + 1;
 
-            output = textString + " " + counterNum.ToString();
-
-            //actual writing to file and preview
-
-            bool result = false; //initialize to false
-            for (int i = 0; i < 3; i++) //checks three times to avoid infinite loop
+            if (targetValue > num_counter.Maximum)
             {
-                result = checkOutput();
-
-                if (result == true) //if file exists, write output
-                {
-                    writeOutput(output);
-                    i = 3; //end loop
-                }
-               else//if file doesn't exist, create it and try again
-                {
-                    if (i == 3)//if the loop is supposed to end and file still cannot be written, output error
-                    {
-                        ioErrorMessage();
-                    }
-                }
+                MessageBox.Show("The counter is currently at its maximum value.");
+            } 
+            else
+            {
+                num_counter.Value = targetValue;
+                updateOutput();
             }
-            */
+            
         }
 
-        private void btn_addOne_Click(object sender, EventArgs e)
+        private void btn_minusOne_Click(object sender, EventArgs e) //When -1 is clicked
         {
-            updateOutput(txt_text.Text, num_counter.Value + 1);
-            num_counter.Value += 1;
-        }
+            decimal targetValue = num_counter.Value - 1;
 
-        private void btn_minusOne_Click(object sender, EventArgs e)
-        {
-            updateOutput(txt_text.Text, num_counter.Value - 1);
-            num_counter.Value -= 1;
+            if (targetValue < num_counter.Minimum)
+            {
+                MessageBox.Show("The counter is currently at its minimum value.");
+            }
+            else
+            {
+                num_counter.Value = targetValue;
+                updateOutput();
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) //closes the application

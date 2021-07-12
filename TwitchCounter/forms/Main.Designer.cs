@@ -69,6 +69,11 @@
             // num_counter
             // 
             resources.ApplyResources(this.num_counter, "num_counter");
+            this.num_counter.Maximum = new decimal(new int[] {
+            2000000000,
+            0,
+            0,
+            0});
             this.num_counter.Name = "num_counter";
             // 
             // lbl_preview

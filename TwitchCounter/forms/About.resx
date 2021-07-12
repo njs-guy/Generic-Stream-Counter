@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lbl_GTCis.Text" xml:space="preserve">
-    <value>Generic Twitch Counter (GTC) is a counter to count things on a Twitch stream. After changing the label and the current count, it is saved into a text file to be opened by streaming software such as OBS. GTC can be used as a regular counter, but this is the intended purpose.</value>
-  </data>
-  <data name="lbl_Imainlymadethis.Text" xml:space="preserve">
-    <value>I mainly made this for fun. I was thinking of using some kind of counter for my own streams and this seemed simple enough so I thought it’d be fun to just make my own. Things are likely to change in the future so stay tuned for improvements. Hopefully.</value>
-  </data>
 </root>

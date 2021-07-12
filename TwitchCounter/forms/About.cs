@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace TwitchCounter
 {
@@ -20,14 +21,11 @@ namespace TwitchCounter
 
         private void About_Load(object sender, EventArgs e)
         {
-            //current labels do not resize to window. Will include in the future.
+            Assembly asm = Assembly.GetExecutingAssembly();
+            Stream stream = asm.GetManifestResourceStream("TwitchCounter.resources.about.rtf");
 
-            
-        }
-
-        private void link_github_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/njshockey/Generic-Twitch-Counter");
+            RichTextBox rt = richTextBox1;
+            rt.LoadFile(stream, RichTextBoxStreamType.RichText);
         }
     }
 }

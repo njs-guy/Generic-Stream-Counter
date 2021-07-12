@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.tab_options = new System.Windows.Forms.TabControl();
             this.options_general = new System.Windows.Forms.TabPage();
-            this.options_advanced = new System.Windows.Forms.TabPage();
             this.check_AoT = new System.Windows.Forms.CheckBox();
+            this.options_advanced = new System.Windows.Forms.TabPage();
+            this.btn_changeOutput = new System.Windows.Forms.Button();
+            this.btn_changePreviewFont = new System.Windows.Forms.Button();
+            this.check_noText = new System.Windows.Forms.CheckBox();
             this.btn_ok = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_apply = new System.Windows.Forms.Button();
-            this.check_noText = new System.Windows.Forms.CheckBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.btn_changePreviewFont = new System.Windows.Forms.Button();
-            this.btn_changeOutput = new System.Windows.Forms.Button();
             this.tab_options.SuspendLayout();
             this.options_general.SuspendLayout();
             this.options_advanced.SuspendLayout();
@@ -67,6 +68,17 @@
             this.options_general.Text = "General";
             this.options_general.UseVisualStyleBackColor = true;
             // 
+            // check_AoT
+            // 
+            this.check_AoT.AutoSize = true;
+            this.check_AoT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_AoT.Location = new System.Drawing.Point(9, 7);
+            this.check_AoT.Name = "check_AoT";
+            this.check_AoT.Size = new System.Drawing.Size(126, 24);
+            this.check_AoT.TabIndex = 0;
+            this.check_AoT.Text = "Always on top";
+            this.check_AoT.UseVisualStyleBackColor = true;
+            // 
             // options_advanced
             // 
             this.options_advanced.Controls.Add(this.btn_changeOutput);
@@ -80,16 +92,34 @@
             this.options_advanced.Text = "Advanced";
             this.options_advanced.UseVisualStyleBackColor = true;
             // 
-            // check_AoT
+            // btn_changeOutput
             // 
-            this.check_AoT.AutoSize = true;
-            this.check_AoT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_AoT.Location = new System.Drawing.Point(9, 7);
-            this.check_AoT.Name = "check_AoT";
-            this.check_AoT.Size = new System.Drawing.Size(126, 24);
-            this.check_AoT.TabIndex = 0;
-            this.check_AoT.Text = "Always on top";
-            this.check_AoT.UseVisualStyleBackColor = true;
+            this.btn_changeOutput.Location = new System.Drawing.Point(128, 68);
+            this.btn_changeOutput.Name = "btn_changeOutput";
+            this.btn_changeOutput.Size = new System.Drawing.Size(141, 23);
+            this.btn_changeOutput.TabIndex = 3;
+            this.btn_changeOutput.Text = "Change output location";
+            this.btn_changeOutput.UseVisualStyleBackColor = true;
+            // 
+            // btn_changePreviewFont
+            // 
+            this.btn_changePreviewFont.Location = new System.Drawing.Point(8, 68);
+            this.btn_changePreviewFont.Name = "btn_changePreviewFont";
+            this.btn_changePreviewFont.Size = new System.Drawing.Size(114, 23);
+            this.btn_changePreviewFont.TabIndex = 2;
+            this.btn_changePreviewFont.Text = "Change preview font";
+            this.btn_changePreviewFont.UseVisualStyleBackColor = true;
+            // 
+            // check_noText
+            // 
+            this.check_noText.AutoSize = true;
+            this.check_noText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_noText.Location = new System.Drawing.Point(4, 7);
+            this.check_noText.Name = "check_noText";
+            this.check_noText.Size = new System.Drawing.Size(278, 24);
+            this.check_noText.TabIndex = 0;
+            this.check_noText.Text = "Do not output text file. Preview only.";
+            this.check_noText.UseVisualStyleBackColor = true;
             // 
             // btn_ok
             // 
@@ -118,35 +148,6 @@
             this.btn_apply.Text = "Apply";
             this.btn_apply.UseVisualStyleBackColor = true;
             // 
-            // check_noText
-            // 
-            this.check_noText.AutoSize = true;
-            this.check_noText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_noText.Location = new System.Drawing.Point(4, 7);
-            this.check_noText.Name = "check_noText";
-            this.check_noText.Size = new System.Drawing.Size(278, 24);
-            this.check_noText.TabIndex = 0;
-            this.check_noText.Text = "Do not output text file. Preview only.";
-            this.check_noText.UseVisualStyleBackColor = true;
-            // 
-            // btn_changePreviewFont
-            // 
-            this.btn_changePreviewFont.Location = new System.Drawing.Point(8, 68);
-            this.btn_changePreviewFont.Name = "btn_changePreviewFont";
-            this.btn_changePreviewFont.Size = new System.Drawing.Size(114, 23);
-            this.btn_changePreviewFont.TabIndex = 2;
-            this.btn_changePreviewFont.Text = "Change preview font";
-            this.btn_changePreviewFont.UseVisualStyleBackColor = true;
-            // 
-            // btn_changeOutput
-            // 
-            this.btn_changeOutput.Location = new System.Drawing.Point(128, 68);
-            this.btn_changeOutput.Name = "btn_changeOutput";
-            this.btn_changeOutput.Size = new System.Drawing.Size(141, 23);
-            this.btn_changeOutput.TabIndex = 3;
-            this.btn_changeOutput.Text = "Change output location";
-            this.btn_changeOutput.UseVisualStyleBackColor = true;
-            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +158,7 @@
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.tab_options);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Options";
             this.Text = "Options";
             this.Load += new System.EventHandler(this.Options_Load);

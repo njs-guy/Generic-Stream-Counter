@@ -9,7 +9,7 @@ Generic Twitch Counter (GTC) is a counter for Windows to count things on a lives
 - *v.X.XX:* Source code of previous versions.
 
 # Current To do
-- [x] Redo help and about pages (they look pretty bad).
+- [x] <s>Redo help and about pages (they look pretty bad).</s>
 - [ ] Options page
 - [ ] Make icon, logo, and other assets
 - [ ] Universal hotkeys
@@ -17,3 +17,12 @@ Generic Twitch Counter (GTC) is a counter for Windows to count things on a lives
 - [ ] Change where text file is saved. Be able to turn off saving to text file.
 - [ ] Better documentation
 - [ ] Come up with more features and improvements. Feel free to leave suggestions.
+
+# How to compile
+1. Clone the repo and open TwitchCounter.sln in Visual Studio.
+2. Run it.
+3. ???
+4. Profit.
+
+# License
+Generic Twitch Counter uses the MIT License. See LICENSE.txt for more information.

@@ -1,5 +1,7 @@
 # Generic Twitch Counter
-Generic Twitch Counter (GTC) is a counter for Windows to count things on a livestream, such as the number of deaths or resets. After changing the label and the current count, it is saved into a text file to be opened by streaming software such as OBS. GTC can be used as a regular counter, but this is the intended purpose. 
+Generic Twitch Counter (GTC) is a counter for Windows to count things on a livestream, such as the number of deaths or resets. After changing the label and the current count, it is saved into a text file to be opened by streaming software such as OBS. GTC can be used as a regular counter, but this is the intended purpose.
+
+While there is currently no Mac or Linux version, GTC works well with WINE.
 
 **To download, go to releases on the right side of the main Github page.**
 

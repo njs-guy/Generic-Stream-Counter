@@ -22,7 +22,7 @@ namespace TwitchCounter
         private void About_Load(object sender, EventArgs e)
         {
             Assembly asm = Assembly.GetExecutingAssembly();
-            Stream stream = asm.GetManifestResourceStream("TwitchCounter.resources.about.rtf");
+            Stream stream = asm.GetManifestResourceStream("StreamCounter.resources.about.rtf");
 
             RichTextBox rt = richTextBox1;
             rt.LoadFile(stream, RichTextBoxStreamType.RichText);

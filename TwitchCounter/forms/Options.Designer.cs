@@ -64,6 +64,7 @@
             this.btn_changeOutput.TabIndex = 3;
             this.btn_changeOutput.Text = "Change output location";
             this.btn_changeOutput.UseVisualStyleBackColor = true;
+            this.btn_changeOutput.Click += new System.EventHandler(this.btn_changeOutput_Click);
             // 
             // btn_changePreviewFont
             // 
@@ -73,6 +74,7 @@
             this.btn_changePreviewFont.TabIndex = 2;
             this.btn_changePreviewFont.Text = "Change preview font";
             this.btn_changePreviewFont.UseVisualStyleBackColor = true;
+            this.btn_changePreviewFont.Click += new System.EventHandler(this.btn_changePreviewFont_Click);
             // 
             // check_noText
             // 

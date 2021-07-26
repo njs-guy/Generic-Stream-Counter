@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TwitchCounter.forms
 {
@@ -14,6 +15,12 @@ namespace TwitchCounter.forms
     {
         //Saves application settings.
         public void saveSettings()
+        {
+
+        }
+
+        //After changing the settings file, change the current settings to reflect that
+        public void applySettings()
         {
 
         }
@@ -45,6 +52,41 @@ namespace TwitchCounter.forms
         private void btn_apply_Click(object sender, EventArgs e)
         {
             saveSettings();
+        }
+
+        //Font dialog when selecting preview font
+        private void btn_changePreviewFont_Click(object sender, EventArgs e)
+        {
+            if(fontDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                MessageBox.Show(Convert.ToString(fontDialog1.Font));
+            }
+        }
+
+        //Save file dialog when changing output file
+        private void btn_changeOutput_Click(object sender, EventArgs e)
+        {
+            var folderBrowserDialog1 = new FolderBrowserDialog();
+
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if( result == DialogResult.OK)
+            {
+                string outputPath = folderBrowserDialog1.SelectedPath;
+                MessageBox.Show(outputPath);
+            }
+
+            /*
+            saveFileDialog1.Filter = "Text files|*.txt";
+            saveFileDialog1.Title = "Change output location";
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "")
+            {
+                System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog1.OpenFile();
+                MessageBox.Show(Convert.ToString(fs));
+                fs.Close();
+            }
+            */
         }
     }
 }

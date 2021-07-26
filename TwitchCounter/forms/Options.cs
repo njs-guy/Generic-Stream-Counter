@@ -16,7 +16,8 @@ namespace TwitchCounter.forms
         //Saves application settings.
         public void saveSettings()
         {
-
+            //Properties.Settings.AlwaysOnTop = check_AoT.Checked;
+            //Properties.
         }
 
         //After changing the settings file, change the current settings to reflect that
@@ -74,19 +75,6 @@ namespace TwitchCounter.forms
                 string outputPath = folderBrowserDialog1.SelectedPath;
                 MessageBox.Show(outputPath);
             }
-
-            /*
-            saveFileDialog1.Filter = "Text files|*.txt";
-            saveFileDialog1.Title = "Change output location";
-            saveFileDialog1.ShowDialog();
-
-            if (saveFileDialog1.FileName != "")
-            {
-                System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog1.OpenFile();
-                MessageBox.Show(Convert.ToString(fs));
-                fs.Close();
-            }
-            */
         }
     }
 }

@@ -14,7 +14,7 @@ While there is currently no Mac or Linux version, GTC works well with WINE.
 
 # To do
 ### In progress 
-- [x] <s>Redo help and about pages (they look pretty bad).</s>
+- [ ] Rework help and about pages into a wiki
 - [ ] Options page
 - [ ] Change where text file is saved. Be able to turn off saving to text file.
 - [ ] Make icon, logo, and other assets

@@ -1,11 +1,9 @@
 # Generic Stream Counter
 [![Maintainer](https://img.shields.io/badge/maintainer-njshockey-blue)](https://github.com/njshockey)
 
-Generic Twitch Counter (GTC) is a counter for Windows to count things on a livestream, such as the number of deaths or resets. After changing the label and the current count, it is saved into a text file to be opened by streaming software such as OBS. GTC can be used as a regular counter, but this is the intended purpose.
+### An easy way to count things on your stream.
 
-While there is currently no Mac or Linux version, GTC works well with WINE.
-
-**To download, go to releases on the right side of the main Github page.**
+Setting up an on-screen counter is easy, but constantly changing it is *annoying*. Generic Stream Counter makes a text file for OBS or Xsplit to update it automatically. From there, it can be stylized just like any other text source.
 
 # Branches
 - *Master:* The main, stable branch as per usual.
@@ -14,10 +12,10 @@ While there is currently no Mac or Linux version, GTC works well with WINE.
 
 # To do
 ### In progress 
-- [ ] Rework help and about pages into a wiki
-- [ ] Options page
-- [ ] Change where text file is saved. Be able to turn off saving to text file.
-- [ ] Make icon, logo, and other assets
+- [X] Rework help and about pages into a wiki
+- [ ] Options page (WIP)
+- [ ] Change default text output to exe directory
+- [ ] Make icon, logo, and other assets (WIP)
 ### Coming soon
 - [ ] Universal hotkeys
 - [ ] Dark mode

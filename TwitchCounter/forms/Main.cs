@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TwitchCounter.forms;
 using StreamCounter.forms;
+using System.Diagnostics;
 
 namespace TwitchCounter
 {
@@ -174,8 +175,8 @@ namespace TwitchCounter
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e) //shows the help page/form
         {
-            Form helpPage = new Help();
-            helpPage.Show();
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/njshockey/Generic-Stream-Counter/wiki/Help");
+            Process.Start(sInfo);
         }
 
         private void optionsPageToolStripMenuItem_Click(object sender, EventArgs e) //shows the options page/form

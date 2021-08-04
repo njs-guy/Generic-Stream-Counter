@@ -104,6 +104,16 @@ namespace TwitchCounter
             }
         }
 
+        private void saveSession()
+        {
+            //Take values from txt_text and num_counter and save to Settings.PrevSess_text and Settings.PrevSess_count
+        }
+
+        private void restorePrevSession()
+        {
+            //Take values from Settings.PrevSess_text and Settings.PrevSess_count and set them to txt_text and num_counter
+        }
+
 
         private void Main_Load(object sender, EventArgs e) //on load
         {

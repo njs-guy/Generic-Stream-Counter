@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using StreamCounter.Properties;
 
 namespace TwitchCounter.forms
 {
@@ -16,8 +17,24 @@ namespace TwitchCounter.forms
         //Saves application settings.
         public void saveSettings()
         {
-            //Properties.Settings.AlwaysOnTop = check_AoT.Checked;
-            //Properties.
+            //Settings.Default.AlwaysOnTop = check_AoT.Checked;
+
+            //Settings.Default.RestorePrevSess = check_restorePrevSess.Checked;
+
+            MessageBox.Show(Convert.ToString(check_AoT.Checked));
+            MessageBox.Show(Convert.ToString(check_restorePrevSess.Checked));
+
+            if (Settings.Default.PreviewFont != null)
+            {
+
+            }
+
+            if (Settings.Default.OutputPath != null)
+            {
+
+            }
+
+            Settings.Default.Save();
         }
 
         //After changing the settings file, change the current settings to reflect that

@@ -48,6 +48,8 @@
             // check_AoT
             // 
             this.check_AoT.AutoSize = true;
+            this.check_AoT.Checked = global::StreamCounter.Properties.Settings.Default.AlwaysOnTop;
+            this.check_AoT.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "AlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.check_AoT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AoT.Location = new System.Drawing.Point(6, 19);
             this.check_AoT.Name = "check_AoT";
@@ -79,6 +81,8 @@
             // check_noText
             // 
             this.check_noText.AutoSize = true;
+            this.check_noText.Checked = global::StreamCounter.Properties.Settings.Default.NoOutput;
+            this.check_noText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "NoOutput", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.check_noText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_noText.Location = new System.Drawing.Point(6, 19);
             this.check_noText.Name = "check_noText";
@@ -120,6 +124,8 @@
             // check_restorePrevSess
             // 
             this.check_restorePrevSess.AutoSize = true;
+            this.check_restorePrevSess.Checked = global::StreamCounter.Properties.Settings.Default.RestorePrevSess;
+            this.check_restorePrevSess.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "RestorePrevSess", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.check_restorePrevSess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_restorePrevSess.Location = new System.Drawing.Point(6, 49);
             this.check_restorePrevSess.Name = "check_restorePrevSess";

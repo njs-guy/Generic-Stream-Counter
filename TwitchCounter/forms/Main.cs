@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TwitchCounter.forms;
+using StreamCounter.forms;
 
 namespace TwitchCounter
 {
@@ -167,7 +168,7 @@ namespace TwitchCounter
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) //shows the about page/form
         {
-            Form aboutPage = new About();
+            Form aboutPage = new AboutBox();
             aboutPage.Show(); 
         }
 

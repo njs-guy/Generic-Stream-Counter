@@ -17,7 +17,6 @@ namespace TwitchCounter.forms
         //Saves application settings.
         public void saveSettings()
         {
-            Settings.Default.AlwaysOnTop = check_AoT.Checked;
 
             Settings.Default.RestorePrevSess = check_restorePrevSess.Checked;
 

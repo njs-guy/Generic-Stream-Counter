@@ -29,34 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
-            this.check_AoT = new System.Windows.Forms.CheckBox();
             this.btn_changeOutput = new System.Windows.Forms.Button();
             this.btn_changePreviewFont = new System.Windows.Forms.Button();
-            this.check_noText = new System.Windows.Forms.CheckBox();
             this.btn_ok = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_apply = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.check_restorePrevSess = new System.Windows.Forms.CheckBox();
             this.gb_general = new System.Windows.Forms.GroupBox();
             this.gb_advanced = new System.Windows.Forms.GroupBox();
+            this.check_noText = new System.Windows.Forms.CheckBox();
+            this.check_restorePrevSess = new System.Windows.Forms.CheckBox();
             this.gb_general.SuspendLayout();
             this.gb_advanced.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // check_AoT
-            // 
-            this.check_AoT.AutoSize = true;
-            this.check_AoT.Checked = global::StreamCounter.Properties.Settings.Default.AlwaysOnTop;
-            this.check_AoT.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "AlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.check_AoT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_AoT.Location = new System.Drawing.Point(6, 19);
-            this.check_AoT.Name = "check_AoT";
-            this.check_AoT.Size = new System.Drawing.Size(126, 24);
-            this.check_AoT.TabIndex = 0;
-            this.check_AoT.Text = "Always on top";
-            this.check_AoT.UseVisualStyleBackColor = true;
             // 
             // btn_changeOutput
             // 
@@ -77,19 +63,6 @@
             this.btn_changePreviewFont.Text = "Change preview font";
             this.btn_changePreviewFont.UseVisualStyleBackColor = true;
             this.btn_changePreviewFont.Click += new System.EventHandler(this.btn_changePreviewFont_Click);
-            // 
-            // check_noText
-            // 
-            this.check_noText.AutoSize = true;
-            this.check_noText.Checked = global::StreamCounter.Properties.Settings.Default.NoOutput;
-            this.check_noText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "NoOutput", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.check_noText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_noText.Location = new System.Drawing.Point(6, 19);
-            this.check_noText.Name = "check_noText";
-            this.check_noText.Size = new System.Drawing.Size(310, 24);
-            this.check_noText.TabIndex = 0;
-            this.check_noText.Text = "Do not output text file. Use only preview.";
-            this.check_noText.UseVisualStyleBackColor = true;
             // 
             // btn_ok
             // 
@@ -121,22 +94,8 @@
             this.btn_apply.UseVisualStyleBackColor = true;
             this.btn_apply.Click += new System.EventHandler(this.btn_apply_Click);
             // 
-            // check_restorePrevSess
-            // 
-            this.check_restorePrevSess.AutoSize = true;
-            this.check_restorePrevSess.Checked = global::StreamCounter.Properties.Settings.Default.RestorePrevSess;
-            this.check_restorePrevSess.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "RestorePrevSess", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.check_restorePrevSess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_restorePrevSess.Location = new System.Drawing.Point(6, 49);
-            this.check_restorePrevSess.Name = "check_restorePrevSess";
-            this.check_restorePrevSess.Size = new System.Drawing.Size(282, 24);
-            this.check_restorePrevSess.TabIndex = 1;
-            this.check_restorePrevSess.Text = "Restore previous session on startup";
-            this.check_restorePrevSess.UseVisualStyleBackColor = true;
-            // 
             // gb_general
             // 
-            this.gb_general.Controls.Add(this.check_AoT);
             this.gb_general.Controls.Add(this.check_restorePrevSess);
             this.gb_general.Location = new System.Drawing.Point(12, 13);
             this.gb_general.Name = "gb_general";
@@ -156,6 +115,32 @@
             this.gb_advanced.TabIndex = 5;
             this.gb_advanced.TabStop = false;
             this.gb_advanced.Text = "Advanced";
+            // 
+            // check_noText
+            // 
+            this.check_noText.AutoSize = true;
+            this.check_noText.Checked = global::StreamCounter.Properties.Settings.Default.NoOutput;
+            this.check_noText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "NoOutput", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.check_noText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_noText.Location = new System.Drawing.Point(6, 19);
+            this.check_noText.Name = "check_noText";
+            this.check_noText.Size = new System.Drawing.Size(310, 24);
+            this.check_noText.TabIndex = 0;
+            this.check_noText.Text = "Do not output text file. Use only preview.";
+            this.check_noText.UseVisualStyleBackColor = true;
+            // 
+            // check_restorePrevSess
+            // 
+            this.check_restorePrevSess.AutoSize = true;
+            this.check_restorePrevSess.Checked = global::StreamCounter.Properties.Settings.Default.RestorePrevSess;
+            this.check_restorePrevSess.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "RestorePrevSess", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.check_restorePrevSess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_restorePrevSess.Location = new System.Drawing.Point(6, 19);
+            this.check_restorePrevSess.Name = "check_restorePrevSess";
+            this.check_restorePrevSess.Size = new System.Drawing.Size(282, 24);
+            this.check_restorePrevSess.TabIndex = 1;
+            this.check_restorePrevSess.Text = "Restore previous session on startup";
+            this.check_restorePrevSess.UseVisualStyleBackColor = true;
             // 
             // Options
             // 
@@ -181,7 +166,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox check_AoT;
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_apply;

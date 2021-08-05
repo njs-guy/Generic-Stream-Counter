@@ -108,6 +108,11 @@ namespace TwitchCounter
                     }
                 }
             }
+
+            if (Settings.Default.RestorePrevSess)
+            {
+                saveSession();
+            }
         }
 
         public void setOnTop(bool value)
@@ -118,11 +123,18 @@ namespace TwitchCounter
         private void saveSession()
         {
             //Take values from txt_text and num_counter and save to Settings.PrevSess_text and Settings.PrevSess_count
+            Settings.Default.PrevSess_text = txt_text.Text;
+            Settings.Default.PrevSess_count = num_counter.Value;
+            Settings.Default.Save();
         }
 
         private void restorePrevSession()
         {
             //Take values from Settings.PrevSess_text and Settings.PrevSess_count and set them to txt_text and num_counter
+            txt_text.Text = Settings.Default.PrevSess_text;
+            num_counter.Value = Settings.Default.PrevSess_count;
+
+            updateOutput();
         }
 
 
@@ -134,6 +146,11 @@ namespace TwitchCounter
             checkOutput();
 
             AcceptButton = btn_update; //Allows the user to press Enter to click the update button
+
+            if(Settings.Default.RestorePrevSess)
+            {
+                restorePrevSession();
+            }
         }
 
         private void btn_update_Click(object sender, EventArgs e)

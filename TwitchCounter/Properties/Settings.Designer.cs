@@ -49,7 +49,7 @@ namespace StreamCounter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\"\"")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Text")]
         public string PrevSess_text {
             get {
                 return ((string)(this["PrevSess_text"]));

@@ -64,7 +64,6 @@ namespace TwitchCounter
                 StreamWriter outWrite = new StreamWriter(output_path, false);
 
                 outWrite.WriteLine(o);
-                lbl_preview.Text = o;
                 
                 //MessageBox.Show(o, "Debug", MessageBoxButtons.OK);
                 
@@ -85,23 +84,27 @@ namespace TwitchCounter
 
             output = textString + " " + counterNum.ToString();
 
+            lbl_preview.Text = output;
+
             //actual writing to file and preview
-
-            bool result = false; //initialize to false
-            for (int i = 0; i < 3; i++) //checks three times to avoid infinite loop
+            if (Settings.Default.NoOutput == false) //If NoOutput is true, ignore all of this. Do not write to file.
             {
-                result = checkOutput();
+                bool result = false; //initialize to false
+                for (int i = 0; i < 3; i++) //checks three times to avoid infinite loop
+                {
+                    result = checkOutput();
 
-                if (result) //if file exists, write output
-                {
-                    writeOutput(output);
-                    i = 3; //end loop
-                }
-                else //if file doesn't exist, create it and try again
-                {
-                    if (i == 3)//if the loop is supposed to end and file still cannot be written, output error
+                    if (result) //if file exists, write output
                     {
-                        ioErrorMessage();
+                        writeOutput(output);
+                        i = 3; //end loop
+                    }
+                    else //if file doesn't exist, create it and try again
+                    {
+                        if (i == 3)//if the loop is supposed to end and file still cannot be written, output error
+                        {
+                            ioErrorMessage();
+                        }
                     }
                 }
             }

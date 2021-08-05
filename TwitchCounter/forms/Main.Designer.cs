@@ -111,6 +111,7 @@
             // 
             // alwaysOnTopToolStripMenuItem
             // 
+            this.alwaysOnTopToolStripMenuItem.Checked = global::StreamCounter.Properties.Settings.Default.AlwaysOnTop;
             this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
             resources.ApplyResources(this.alwaysOnTopToolStripMenuItem, "alwaysOnTopToolStripMenuItem");
             this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);

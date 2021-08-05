@@ -21,6 +21,8 @@ namespace TwitchCounter.forms
 
             Settings.Default.RestorePrevSess = check_restorePrevSess.Checked;
 
+            Settings.Default.NoOutput = check_noText.Checked;
+
             if (Settings.Default.PreviewFont != null)
             {
 

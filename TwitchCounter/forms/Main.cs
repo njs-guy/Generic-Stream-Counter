@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using TwitchCounter.forms;
 using StreamCounter.forms;
 using System.Diagnostics;
+using StreamCounter.Properties;
 
 namespace TwitchCounter
 {
@@ -20,8 +21,8 @@ namespace TwitchCounter
         int counterNum = 0; //Takes value from num_counter (the numbox next to "Counter: ")
         string output = ""; //Takes both previous values and combines them into the string to be output to the text file.
 
-        //output currently set to desktop as counter_output.txt
-        string output_path = (Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory) + "\\counter_output.txt");
+        //output defaults to exe path as counter_output.txt
+        string output_path = Settings.Default.OutputPath;
 
 
         public Main()
@@ -106,6 +107,11 @@ namespace TwitchCounter
             }
         }
 
+        public void setOnTop(bool value)
+        {
+            this.TopMost = value;
+        }
+
         private void saveSession()
         {
             //Take values from txt_text and num_counter and save to Settings.PrevSess_text and Settings.PrevSess_count
@@ -119,7 +125,8 @@ namespace TwitchCounter
 
         private void Main_Load(object sender, EventArgs e) //on load
         {
-            alwaysOnTopToolStripMenuItem.Checked = false; //initializes always on top to false
+            alwaysOnTopToolStripMenuItem.Checked = Settings.Default.AlwaysOnTop; //initializes always on top to setting
+            setOnTop(Settings.Default.AlwaysOnTop);
 
             checkOutput();
 
@@ -196,15 +203,19 @@ namespace TwitchCounter
             {
                 //change always on top to true
                 alwaysOnTopToolStripMenuItem.Checked = true;
-                this.TopMost = true;
+                setOnTop(true);
             }
             else //if always on top is checked
             {
                 //change always on top to false
                 alwaysOnTopToolStripMenuItem.Checked = false;
-                this.TopMost = false;
+                setOnTop(false);
             }
-            
+
+            //alwaysOnTopToolStripMenuItem.Checked = Settings.Default.AlwaysOnTop;
+
+            Settings.Default.AlwaysOnTop = alwaysOnTopToolStripMenuItem.Checked;
+            Settings.Default.Save();
         }
         
     }

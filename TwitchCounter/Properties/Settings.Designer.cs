@@ -97,8 +97,7 @@ namespace StreamCounter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("(Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory) + \"" +
-            "\\\\counter_output.txt\")")]
+        [global::System.Configuration.DefaultSettingValueAttribute("counter_output.txt")]
         public string OutputPath {
             get {
                 return ((string)(this["OutputPath"]));

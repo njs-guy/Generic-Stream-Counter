@@ -10,17 +10,16 @@ Setting up an on-screen counter is easy, but constantly changing it is *annoying
 - *Development:* Code currently in development and is likely to not fully work as intended. This branch will merge with the master when there is a new release.
 - *v.X.XX:* Source code of previous versions.
 
-# To do
-### In progress 
-- [X] Rework help and about pages into a wiki
-- [ ] Options page (WIP)
-- [ ] Change default text output to exe directory
-- [ ] Make icon, logo, and other assets (WIP)
+# Features
+- Easily output counter to a text file
+- Add 1 and Minus 1 buttons for quick counting
+- Preview window
+- Option for always on top
+
 ### Coming soon
-- [ ] Universal hotkeys
-- [ ] Dark mode
-- [ ] Better documentation
-- [ ] Come up with more features and improvements. Feel free to leave suggestions.
+- Universal hotkeys
+- Dark mode
+- Better documentation
 
 # How to compile
 1. Clone the repo and open TwitchCounter.sln in Visual Studio.

@@ -41,6 +41,7 @@
             this.gb_advanced = new System.Windows.Forms.GroupBox();
             this.check_noText = new System.Windows.Forms.CheckBox();
             this.check_confirmReset = new System.Windows.Forms.CheckBox();
+            this.btn_resetSettings = new System.Windows.Forms.Button();
             this.gb_general.SuspendLayout();
             this.gb_advanced.SuspendLayout();
             this.SuspendLayout();
@@ -158,11 +159,22 @@
             this.check_confirmReset.Text = "Confirm counter reset";
             this.check_confirmReset.UseVisualStyleBackColor = true;
             // 
+            // btn_resetSettings
+            // 
+            this.btn_resetSettings.Location = new System.Drawing.Point(12, 471);
+            this.btn_resetSettings.Name = "btn_resetSettings";
+            this.btn_resetSettings.Size = new System.Drawing.Size(75, 23);
+            this.btn_resetSettings.TabIndex = 6;
+            this.btn_resetSettings.Text = "Reset";
+            this.btn_resetSettings.UseVisualStyleBackColor = true;
+            this.btn_resetSettings.Click += new System.EventHandler(this.btn_resetSettings_Click);
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 500);
+            this.Controls.Add(this.btn_resetSettings);
             this.Controls.Add(this.gb_advanced);
             this.Controls.Add(this.gb_general);
             this.Controls.Add(this.btn_apply);
@@ -194,5 +206,6 @@
         private System.Windows.Forms.GroupBox gb_general;
         private System.Windows.Forms.GroupBox gb_advanced;
         private System.Windows.Forms.CheckBox check_confirmReset;
+        private System.Windows.Forms.Button btn_resetSettings;
     }
 }

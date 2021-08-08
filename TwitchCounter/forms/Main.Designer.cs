@@ -37,7 +37,6 @@
             this.btn_update = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +46,7 @@
             this.btn_addOne = new System.Windows.Forms.Button();
             this.btn_minusOne = new System.Windows.Forms.Button();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.num_counter)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gr_preview.SuspendLayout();
@@ -80,6 +80,8 @@
             // lbl_preview
             // 
             resources.ApplyResources(this.lbl_preview, "lbl_preview");
+            this.lbl_preview.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::StreamCounter.Properties.Settings.Default, "PreviewFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lbl_preview.Font = global::StreamCounter.Properties.Settings.Default.PreviewFont;
             this.lbl_preview.Name = "lbl_preview";
             // 
             // btn_update
@@ -110,13 +112,6 @@
             this.exitToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
-            // 
-            // alwaysOnTopToolStripMenuItem
-            // 
-            this.alwaysOnTopToolStripMenuItem.Checked = global::StreamCounter.Properties.Settings.Default.AlwaysOnTop;
-            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-            resources.ApplyResources(this.alwaysOnTopToolStripMenuItem, "alwaysOnTopToolStripMenuItem");
-            this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
             // optionsPageToolStripMenuItem
             // 
@@ -173,6 +168,13 @@
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
             resources.ApplyResources(this.resetToolStripMenuItem, "resetToolStripMenuItem");
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
+            // 
+            // alwaysOnTopToolStripMenuItem
+            // 
+            this.alwaysOnTopToolStripMenuItem.Checked = global::StreamCounter.Properties.Settings.Default.AlwaysOnTop;
+            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+            resources.ApplyResources(this.alwaysOnTopToolStripMenuItem, "alwaysOnTopToolStripMenuItem");
+            this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
             // Main
             // 

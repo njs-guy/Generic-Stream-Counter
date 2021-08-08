@@ -14,6 +14,12 @@ namespace TwitchCounter.forms
 {
     public partial class Options : Form
     {
+        string output_setting_start = "";
+        Font font_setting_start;
+
+        string output_setting_current = "";
+        Font font_setting_current;
+
         //Saves application settings.
         public void saveSettings()
         {
@@ -48,7 +54,8 @@ namespace TwitchCounter.forms
 
         private void Options_Load(object sender, EventArgs e)
         {
-
+            output_setting_start = Settings.Default.OutputPath;
+            font_setting_start = Settings.Default.PreviewFont;
         }
 
         //Saves settings, then closes the window.
@@ -87,8 +94,22 @@ namespace TwitchCounter.forms
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if( result == DialogResult.OK)
             {
-                string outputPath = folderBrowserDialog1.SelectedPath;
+                string outputPath = Convert.ToString(folderBrowserDialog1.SelectedPath) + "\\counter_output.txt";
                 MessageBox.Show(outputPath);
+            }
+        }
+
+        private void btn_resetSettings_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Reset settings to default?", "Generic Stream Counter", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Settings.Default.RestorePrevSess = false;
+                Settings.Default.NoOutput = false;
+                Settings.Default.ConfirmReset = true;
+                Settings.Default.PreviewFont = new Font(FontFamily.GenericSansSerif, 20, FontStyle.Regular, GraphicsUnit.Point);
+                Settings.Default.OutputPath = "counter_output.txt";
+                Settings.Default.Save();
             }
         }
     }

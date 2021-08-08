@@ -46,6 +46,7 @@
             this.gr_preview = new System.Windows.Forms.GroupBox();
             this.btn_addOne = new System.Windows.Forms.Button();
             this.btn_minusOne = new System.Windows.Forms.Button();
+            this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.num_counter)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gr_preview.SuspendLayout();
@@ -101,6 +102,7 @@
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alwaysOnTopToolStripMenuItem,
+            this.resetToolStripMenuItem,
             this.optionsPageToolStripMenuItem,
             this.toolStripSeparator1,
             this.aboutToolStripMenuItem,
@@ -166,6 +168,12 @@
             this.btn_minusOne.UseVisualStyleBackColor = true;
             this.btn_minusOne.Click += new System.EventHandler(this.btn_minusOne_Click);
             // 
+            // resetToolStripMenuItem
+            // 
+            this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+            resources.ApplyResources(this.resetToolStripMenuItem, "resetToolStripMenuItem");
+            this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -211,6 +219,7 @@
         private System.Windows.Forms.ToolStripMenuItem optionsPageToolStripMenuItem;
         private System.Windows.Forms.Button btn_addOne;
         private System.Windows.Forms.Button btn_minusOne;
+        private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
     }
 }
 

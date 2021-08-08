@@ -137,6 +137,13 @@ namespace TwitchCounter
             updateOutput();
         }
 
+        //Resets counter to 0
+        private void resetCounter()
+        {
+            num_counter.Value = 0;
+            updateOutput();
+        }
+
 
         private void Main_Load(object sender, EventArgs e) //on load
         {
@@ -237,6 +244,21 @@ namespace TwitchCounter
             Settings.Default.AlwaysOnTop = alwaysOnTopToolStripMenuItem.Checked;
             Settings.Default.Save();
         }
-        
+
+        private void resetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Settings.Default.ConfirmReset) //Confirmation enabled
+            {
+                DialogResult result = MessageBox.Show("Reset counter to 0?", "Generic Stream Counter", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    resetCounter();
+                }
+            } 
+            else //No confirmation
+            {
+                resetCounter();
+            }
+        }
     }
 }

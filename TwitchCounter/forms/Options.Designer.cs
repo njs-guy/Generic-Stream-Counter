@@ -37,9 +37,10 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.gb_general = new System.Windows.Forms.GroupBox();
+            this.check_restorePrevSess = new System.Windows.Forms.CheckBox();
             this.gb_advanced = new System.Windows.Forms.GroupBox();
             this.check_noText = new System.Windows.Forms.CheckBox();
-            this.check_restorePrevSess = new System.Windows.Forms.CheckBox();
+            this.check_confirmReset = new System.Windows.Forms.CheckBox();
             this.gb_general.SuspendLayout();
             this.gb_advanced.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +97,7 @@
             // 
             // gb_general
             // 
+            this.gb_general.Controls.Add(this.check_confirmReset);
             this.gb_general.Controls.Add(this.check_restorePrevSess);
             this.gb_general.Location = new System.Drawing.Point(12, 13);
             this.gb_general.Name = "gb_general";
@@ -103,6 +105,19 @@
             this.gb_general.TabIndex = 4;
             this.gb_general.TabStop = false;
             this.gb_general.Text = "General";
+            // 
+            // check_restorePrevSess
+            // 
+            this.check_restorePrevSess.AutoSize = true;
+            this.check_restorePrevSess.Checked = global::StreamCounter.Properties.Settings.Default.RestorePrevSess;
+            this.check_restorePrevSess.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "RestorePrevSess", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.check_restorePrevSess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_restorePrevSess.Location = new System.Drawing.Point(6, 19);
+            this.check_restorePrevSess.Name = "check_restorePrevSess";
+            this.check_restorePrevSess.Size = new System.Drawing.Size(282, 24);
+            this.check_restorePrevSess.TabIndex = 1;
+            this.check_restorePrevSess.Text = "Restore previous session on startup";
+            this.check_restorePrevSess.UseVisualStyleBackColor = true;
             // 
             // gb_advanced
             // 
@@ -129,18 +144,19 @@
             this.check_noText.Text = "Do not output text file. Use only preview.";
             this.check_noText.UseVisualStyleBackColor = true;
             // 
-            // check_restorePrevSess
+            // check_confirmReset
             // 
-            this.check_restorePrevSess.AutoSize = true;
-            this.check_restorePrevSess.Checked = global::StreamCounter.Properties.Settings.Default.RestorePrevSess;
-            this.check_restorePrevSess.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "RestorePrevSess", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.check_restorePrevSess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_restorePrevSess.Location = new System.Drawing.Point(6, 19);
-            this.check_restorePrevSess.Name = "check_restorePrevSess";
-            this.check_restorePrevSess.Size = new System.Drawing.Size(282, 24);
-            this.check_restorePrevSess.TabIndex = 1;
-            this.check_restorePrevSess.Text = "Restore previous session on startup";
-            this.check_restorePrevSess.UseVisualStyleBackColor = true;
+            this.check_confirmReset.AutoSize = true;
+            this.check_confirmReset.Checked = global::StreamCounter.Properties.Settings.Default.ConfirmReset;
+            this.check_confirmReset.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.check_confirmReset.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::StreamCounter.Properties.Settings.Default, "ConfirmReset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.check_confirmReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_confirmReset.Location = new System.Drawing.Point(6, 49);
+            this.check_confirmReset.Name = "check_confirmReset";
+            this.check_confirmReset.Size = new System.Drawing.Size(181, 24);
+            this.check_confirmReset.TabIndex = 2;
+            this.check_confirmReset.Text = "Confirm counter reset";
+            this.check_confirmReset.UseVisualStyleBackColor = true;
             // 
             // Options
             // 
@@ -177,5 +193,6 @@
         private System.Windows.Forms.CheckBox check_restorePrevSess;
         private System.Windows.Forms.GroupBox gb_general;
         private System.Windows.Forms.GroupBox gb_advanced;
+        private System.Windows.Forms.CheckBox check_confirmReset;
     }
 }

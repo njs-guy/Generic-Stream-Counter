@@ -19,8 +19,8 @@ namespace TwitchCounter.forms
         {
 
             Settings.Default.RestorePrevSess = check_restorePrevSess.Checked;
-
             Settings.Default.NoOutput = check_noText.Checked;
+            Settings.Default.ConfirmReset = check_confirmReset.Checked;
 
             if (Settings.Default.PreviewFont != null)
             {
@@ -35,8 +35,8 @@ namespace TwitchCounter.forms
             Settings.Default.Save();
         }
 
-        //After changing the settings file, change the current settings to reflect that
-        public void applySettings()
+        //Changes theme
+        public void applyTheme()
         {
 
         }

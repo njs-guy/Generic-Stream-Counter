@@ -23,5 +23,8 @@
     <Setting Name="OutputPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">counter_output.txt</Value>
     </Setting>
+    <Setting Name="ConfirmReset" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

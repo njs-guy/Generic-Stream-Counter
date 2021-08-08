@@ -106,5 +106,17 @@ namespace StreamCounter.Properties {
                 this["OutputPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ConfirmReset {
+            get {
+                return ((bool)(this["ConfirmReset"]));
+            }
+            set {
+                this["ConfirmReset"] = value;
+            }
+        }
     }
 }

@@ -28,12 +28,15 @@ namespace TwitchCounter.forms
             Settings.Default.NoOutput = check_noText.Checked;
             Settings.Default.ConfirmReset = check_confirmReset.Checked;
 
-            if (Settings.Default.PreviewFont != null)
+            //If the font has changed
+            if (font_setting_current != font_setting_start)
             {
-
+                font_setting_start = font_setting_current;
+                Settings.Default.PreviewFont = font_setting_current;
             }
 
-            if (Settings.Default.OutputPath != null)
+            //If the output has changed
+            if (output_setting_current != output_setting_start)
             {
 
             }
@@ -82,7 +85,8 @@ namespace TwitchCounter.forms
         {
             if(fontDialog1.ShowDialog() != DialogResult.Cancel)
             {
-                MessageBox.Show(Convert.ToString(fontDialog1.Font));
+                font_setting_current = fontDialog1.Font;
+                //MessageBox.Show(Convert.ToString(fontDialog1.Font));
             }
         }
 
@@ -104,11 +108,22 @@ namespace TwitchCounter.forms
             DialogResult result = MessageBox.Show("Reset settings to default?", "Generic Stream Counter", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                //non-bool defaults
+                Font defaultFont = new Font(FontFamily.GenericSansSerif, 20, FontStyle.Regular, GraphicsUnit.Point);
+                string defaultOutputPath = "counter_output.txt";
+
+                //update these to be consistent
+                output_setting_start = defaultOutputPath;
+                font_setting_start = defaultFont;
+                output_setting_current = defaultOutputPath;
+                font_setting_current = defaultFont;
+
+                //update actual settings
                 Settings.Default.RestorePrevSess = false;
                 Settings.Default.NoOutput = false;
                 Settings.Default.ConfirmReset = true;
-                Settings.Default.PreviewFont = new Font(FontFamily.GenericSansSerif, 20, FontStyle.Regular, GraphicsUnit.Point);
-                Settings.Default.OutputPath = "counter_output.txt";
+                Settings.Default.PreviewFont = defaultFont;
+                Settings.Default.OutputPath = defaultOutputPath;
                 Settings.Default.Save();
             }
         }

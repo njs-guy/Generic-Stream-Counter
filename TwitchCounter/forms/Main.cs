@@ -206,18 +206,6 @@ namespace TwitchCounter
             Application.Exit(); 
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) //shows the about page/form
-        {
-            Form aboutPage = new AboutBox();
-            aboutPage.Show(); 
-        }
-
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e) //shows the help page/form
-        {
-            ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/njshockey/Generic-Stream-Counter/wiki/Help");
-            Process.Start(sInfo);
-        }
-
         private void optionsPageToolStripMenuItem_Click(object sender, EventArgs e) //shows the options page/form
         {
             Form optionsPage = new Options(this);
@@ -264,6 +252,24 @@ namespace TwitchCounter
             {
                 resetCounter();
             }
+        }
+
+        private void aboutMenuItem_Click(object sender, EventArgs e) //shows the about page/form
+        {
+            Form aboutPage = new AboutBox();
+            aboutPage.Show();
+        }
+
+        private void instructionsToolStripMenuItem_Click(object sender, EventArgs e) //opens the help page in the default web browser
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/njshockey/Generic-Stream-Counter/wiki/Help");
+            Process.Start(sInfo);
+        }
+
+        private void sourceToolStripMenuItem_Click(object sender, EventArgs e) //opens the main branch on GitHub in the default web browser
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/njshockey/Generic-Stream-Counter");
+            Process.Start(sInfo);
         }
     }
 }

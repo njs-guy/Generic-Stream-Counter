@@ -6,7 +6,7 @@
 Setting up an on-screen counter is easy, but constantly changing it is *annoying*. Generic Stream Counter makes a text file for OBS or Xsplit to update it automatically. From there, it can be stylized just like any other text source.
 
 # Branches
-- *Master:* The main, stable branch as per usual.
+- *Main:* The stable branch as per usual.
 - *Development:* Code currently in development and is likely to not fully work as intended. This branch will merge with the master when there is a new release.
 - *v.X.XX:* Source code of previous versions.
 

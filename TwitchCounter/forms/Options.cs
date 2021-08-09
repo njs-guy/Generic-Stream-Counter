@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using StreamCounter.Properties;
+using TwitchCounter.forms;
 
 namespace TwitchCounter.forms
 {
@@ -20,10 +21,23 @@ namespace TwitchCounter.forms
         string output_setting_current = "";
         Font font_setting_current;
 
+        private Main _mainForm; //used to call checkOutput()
+
+        public Options()
+        {
+            InitializeComponent();
+        }
+
+        public Options(Main mainForm)
+        {
+            InitializeComponent();
+            _mainForm = mainForm;
+        }
+
         //Saves application settings.
         public void saveSettings()
         {
-
+            //Check boxes
             Settings.Default.RestorePrevSess = check_restorePrevSess.Checked;
             Settings.Default.NoOutput = check_noText.Checked;
             Settings.Default.ConfirmReset = check_confirmReset.Checked;
@@ -38,9 +52,14 @@ namespace TwitchCounter.forms
             //If the output has changed
             if (output_setting_current != output_setting_start)
             {
+                output_setting_start = output_setting_current;
+                Settings.Default.OutputPath = output_setting_current;
 
+
+                _mainForm.checkOutput();
             }
 
+            //Save settings
             Settings.Default.Save();
         }
 
@@ -50,15 +69,12 @@ namespace TwitchCounter.forms
 
         }
 
-        public Options()
-        {
-            InitializeComponent();
-        }
-
         private void Options_Load(object sender, EventArgs e)
         {
             output_setting_start = Settings.Default.OutputPath;
+            output_setting_current = Settings.Default.OutputPath;
             font_setting_start = Settings.Default.PreviewFont;
+            font_setting_current = Settings.Default.PreviewFont;
         }
 
         //Saves settings, then closes the window.
@@ -86,7 +102,6 @@ namespace TwitchCounter.forms
             if(fontDialog1.ShowDialog() != DialogResult.Cancel)
             {
                 font_setting_current = fontDialog1.Font;
-                //MessageBox.Show(Convert.ToString(fontDialog1.Font));
             }
         }
 
@@ -99,7 +114,9 @@ namespace TwitchCounter.forms
             if( result == DialogResult.OK)
             {
                 string outputPath = Convert.ToString(folderBrowserDialog1.SelectedPath) + "\\counter_output.txt";
-                MessageBox.Show(outputPath);
+                Settings.Default.OutputPath = outputPath;
+
+                MessageBox.Show(Settings.Default.OutputPath);
             }
         }
 

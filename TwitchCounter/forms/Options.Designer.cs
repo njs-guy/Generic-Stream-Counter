@@ -52,7 +52,7 @@
             this.btn_changeOutput.Name = "btn_changeOutput";
             this.btn_changeOutput.Size = new System.Drawing.Size(141, 23);
             this.btn_changeOutput.TabIndex = 3;
-            this.btn_changeOutput.Text = "Change output location";
+            this.btn_changeOutput.Text = "Change output path";
             this.btn_changeOutput.UseVisualStyleBackColor = true;
             this.btn_changeOutput.Click += new System.EventHandler(this.btn_changeOutput_Click);
             // 

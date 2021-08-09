@@ -35,8 +35,13 @@ namespace TwitchCounter
             MessageBox.Show("File could not be written to.", "IO Error", MessageBoxButtons.OK);
         }
 
-        private bool checkOutput() //checks to see if output file exists. If not, create it.
+        public bool checkOutput() //checks to see if output file exists. If not, create it.
         {
+            //output defaults to exe path as counter_output.txt
+            output_path = Settings.Default.OutputPath;
+
+            //MessageBox.Show("Path is now: " + output_path);
+
             try //if output_text already exists
             {
                 StreamReader outRead = new StreamReader(output_path);
@@ -147,10 +152,10 @@ namespace TwitchCounter
 
         private void Main_Load(object sender, EventArgs e) //on load
         {
+            checkOutput();
+
             alwaysOnTopToolStripMenuItem.Checked = Settings.Default.AlwaysOnTop; //initializes always on top to setting
             setOnTop(Settings.Default.AlwaysOnTop);
-
-            checkOutput();
 
             AcceptButton = btn_update; //Allows the user to press Enter to click the update button
 
@@ -215,7 +220,7 @@ namespace TwitchCounter
 
         private void optionsPageToolStripMenuItem_Click(object sender, EventArgs e) //shows the options page/form
         {
-            Form optionsPage = new Options();
+            Form optionsPage = new Options(this);
             optionsPage.Show();
         }
 

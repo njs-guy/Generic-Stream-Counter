@@ -7,7 +7,7 @@ Setting up an on-screen counter is easy, but constantly changing it is *annoying
 
 # Branches
 - *Main:* The stable branch as per usual.
-- *Development:* Code currently in development and is likely to not fully work as intended. This branch will merge with the master when there is a new release.
+- *Development:* Code currently in development and is likely to not fully work as intended. This branch will merge with main when there is a new release.
 - *v.X.XX:* Source code of previous versions.
 
 # Features

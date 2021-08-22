@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TwitchCounter.forms;
 using StreamCounter.forms;
@@ -40,8 +34,6 @@ namespace TwitchCounter
             //output defaults to exe path as counter_output.txt
             output_path = Settings.Default.OutputPath;
 
-            //MessageBox.Show("Path is now: " + output_path);
-
             try //if output_text already exists
             {
                 StreamReader outRead = new StreamReader(output_path);
@@ -68,10 +60,7 @@ namespace TwitchCounter
             {
                 StreamWriter outWrite = new StreamWriter(output_path, false);
 
-                outWrite.WriteLine(o);
-                
-                //MessageBox.Show(o, "Debug", MessageBoxButtons.OK);
-                
+                outWrite.WriteLine(o);               
                 outWrite.Close();
             }
             catch(Exception e)
@@ -231,8 +220,6 @@ namespace TwitchCounter
                 alwaysOnTopToolStripMenuItem.Checked = false;
                 setOnTop(false);
             }
-
-            //alwaysOnTopToolStripMenuItem.Checked = Settings.Default.AlwaysOnTop;
 
             Settings.Default.AlwaysOnTop = alwaysOnTopToolStripMenuItem.Checked;
             Settings.Default.Save();

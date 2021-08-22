@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using StreamCounter.Properties;
-using TwitchCounter.forms;
 
 namespace TwitchCounter.forms
 {
@@ -54,7 +46,6 @@ namespace TwitchCounter.forms
             {
                 output_setting_start = output_setting_current;
                 Settings.Default.OutputPath = output_setting_current;
-
 
                 _mainForm.checkOutput();
             }

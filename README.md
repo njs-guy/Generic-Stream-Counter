@@ -1,12 +1,31 @@
-# Generic Twitch Counter
-Generic Twitch Counter (GTC) is a counter to count things on a Twitch stream. After changing the label and the current count, it is saved into a text file to be opened by streaming software such as OBS. GTC can be used as a regular counter, but this is the intended purpose.
+# Generic Stream Counter
+[![Maintainer](https://img.shields.io/badge/maintainer-njshockey-blue)](https://github.com/njshockey)
 
-**To download, go to releases on the right side of the main Github page.**
+### An easy way to count things on your stream.
 
-Current To do:
-- Make icon, logo, and other assets
-- Add dark mode
-- Change where text file is saved. Be able to turn off saving to text file.
-- Resizing labels for about and help pages
+Setting up an on-screen counter is easy, but constantly changing it is *annoying*. Generic Stream Counter makes a text file for OBS or Xsplit to update it automatically. From there, it can be stylized just like any other text source.
+
+# Branches
+- *Main:* The stable branch as per usual.
+- *Development:* Code currently in development and is likely to not fully work as intended. This branch will merge with main when there is a new release.
+- *v.X.XX:* Source code of previous versions.
+
+# Features
+- Easily output counter to a text file
+- Add 1 and Minus 1 buttons for quick counting
+- Preview window
+- Option for always on top
+
+### Coming soon
+- Universal hotkeys
+- Dark mode
 - Better documentation
-- Come up with more features and improvements. Feel free to leave suggestions.
+
+# How to compile
+1. Clone the repo and open TwitchCounter.sln in Visual Studio.
+2. Run it and take the built exe out of bin/Debug or bin/Release.
+3. ???
+4. Profit.
+
+# License
+Generic Twitch Counter uses the MIT License. See LICENSE.txt for more information.

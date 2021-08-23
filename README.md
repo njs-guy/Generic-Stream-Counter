@@ -1,5 +1,7 @@
-# Generic Stream Counter
+# ![Generic Stream Counter icon](assets/icon.png) Generic Stream Counter
 [![Maintainer](https://img.shields.io/badge/maintainer-njshockey-blue)](https://github.com/njshockey)
+[![Operating System](https://img.shields.io/badge/OS-Windows-blue)](https://img.shields.io/badge/OS-Windows-blue)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.txt)
 
 ### An easy way to count things on your stream.
 
@@ -7,7 +9,7 @@ Setting up an on-screen counter is easy, but constantly changing it is *annoying
 
 # Branches
 - *Main:* The stable branch as per usual.
-- *Development:* Code currently in development and is likely to not fully work as intended. This branch will merge with main when there is a new release.
+- *Dev:* Code currently in development and is likely to not fully work as intended. This branch will merge with main when there is a new release.
 - *v.X.XX:* Source code of previous versions.
 
 # Features
@@ -28,4 +30,4 @@ Setting up an on-screen counter is easy, but constantly changing it is *annoying
 4. Profit.
 
 # License
-Generic Twitch Counter uses the MIT License. See LICENSE.txt for more information.
+Generic Twitch Counter uses the MIT License. See [LICENSE.txt](LICENSE.txt) for more information.

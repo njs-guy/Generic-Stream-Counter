@@ -26,6 +26,14 @@ namespace TwitchCounter.forms
             _mainForm = mainForm;
         }
 
+        private void Options_Load(object sender, EventArgs e)
+        {
+            output_setting_start = Settings.Default.OutputPath;
+            output_setting_current = Settings.Default.OutputPath;
+            font_setting_start = Settings.Default.PreviewFont;
+            font_setting_current = Settings.Default.PreviewFont;
+        }
+
         //Saves application settings.
         public void saveSettings()
         {
@@ -47,7 +55,7 @@ namespace TwitchCounter.forms
                 output_setting_start = output_setting_current;
                 Settings.Default.OutputPath = output_setting_current;
 
-                _mainForm.checkOutput();
+                _mainForm.checkOutput(); //Check that there won't be issues writing to new path
             }
 
             //Save settings
@@ -58,14 +66,6 @@ namespace TwitchCounter.forms
         public void applyTheme()
         {
 
-        }
-
-        private void Options_Load(object sender, EventArgs e)
-        {
-            output_setting_start = Settings.Default.OutputPath;
-            output_setting_current = Settings.Default.OutputPath;
-            font_setting_start = Settings.Default.PreviewFont;
-            font_setting_current = Settings.Default.PreviewFont;
         }
 
         //Saves settings, then closes the window.
@@ -105,9 +105,9 @@ namespace TwitchCounter.forms
             if( result == DialogResult.OK)
             {
                 string outputPath = Convert.ToString(folderBrowserDialog1.SelectedPath) + "\\counter_output.txt";
-                Settings.Default.OutputPath = outputPath;
+                output_setting_current = outputPath;
 
-                MessageBox.Show(Settings.Default.OutputPath);
+                MessageBox.Show("The counter's output path will now be at " + output_setting_current);
             }
         }
 

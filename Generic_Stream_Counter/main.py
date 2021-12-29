@@ -3,6 +3,7 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
+from tkinter.messagebox import showerror
 
 from theme.gsc_theme import set_theme
 from write_to_file import write_output, write_settings
@@ -33,7 +34,7 @@ class App(tk.Tk):
                 counter_num.set(str(num+1))
                 update_output()
             else:
-                print('whoops')
+                showerror(title="Error", message="The counter is currently at its maximum value.")
 
         def minus_button_clicked():
             num = int(counter_num.get())
@@ -43,7 +44,7 @@ class App(tk.Tk):
                 counter_num.set(str(num-1))
                 update_output()
             else:
-                print('whoops')
+                showerror(title="Error", message="The counter is currently at its minimum value.")
 
         # Window properties
         self.geometry('600x300')

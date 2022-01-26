@@ -20,7 +20,7 @@ class About(tk.Tk):
 
         # Header
         self.version = '0.3'
-        self.logo_img = tk.PhotoImage(file='./images/gsc_about.gif')
+        self.logo_img = tk.PhotoImage(file='./Generic_Stream_Counter/images/gsc_about.gif')
         self.header_lbl = ttk.Label(image=self.logo_img,text=f"Generic Stream Counter v{self.version}", compound='top')
         self.header_lbl.pack()
 

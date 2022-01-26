@@ -1,3 +1,5 @@
+# UI for about window/page
+
 import tkinter as tk
 import tkinter.ttk as ttk
 import webbrowser

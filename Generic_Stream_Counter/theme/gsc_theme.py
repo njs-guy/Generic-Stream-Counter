@@ -46,7 +46,7 @@ def set_theme(container, font_size = 14, theme="light"):
                 container.style.theme_use('clam')
                 container.style.configure('.', font=(font_name, font_size), background=bg_color, foreground=text_color, bordercolor='darkgrey')
                 # container.style.configure('TCheckbutton', font=(font_name, font_size))
-                container.style.configure('TButton', font=(font_name, font_size-2), background=btn_bg_color, highlightcolor=btn_hover_color, relief='groove', borderwidth=3, cursor="hand2")
+                container.style.configure('TButton', font=(font_name, font_size), background=btn_bg_color, highlightcolor=btn_hover_color, relief='groove', borderwidth=3, cursor="hand2")
                 # container.style.map("TButton",
                 #     foreground=[('pressed', 'black'), ('active', 'black')],
                 #     background=[('pressed', '!disabled', btn_pressed_color), ('active', btn_hover_color)]
@@ -54,5 +54,5 @@ def set_theme(container, font_size = 14, theme="light"):
                 # container.style.configure('TEntry', font=(font_name, font_size))
                 # container.style.configure('TSpinbox', font=(font_name, font_size))
                 # container.style.configure('TLabel', font=(font_name, font_size), background=l_bg_color)
-                container.style.configure('Label', font=(font_name, font_size-4))
+                container.style.configure('Label', font=(font_name, font_size))
                 # container.style.configure('TLabelFrame', font=(font_name, font_size), background=l_bg_color)

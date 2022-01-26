@@ -68,7 +68,7 @@ class Options(tk.Tk):
         cancel_btn.pack(anchor="se", side="right", padx=5, pady=5)
         apply_btn.pack(anchor="se", side="right", padx=5, pady=5)
         
-        set_theme(self, 12)
+        set_theme(self, 10)
 
 
 # Driver

@@ -61,22 +61,25 @@ class App(tk.Tk):
         counter_num = StringVar()
         counter_num.set('0') # Default value. Set using settings later.
             
-        # Labels
-        # Text:
-        self.text_lbl = ttk.Label(text="Text: ")
+        # Labels ######################
+        # Text
+        self.text_lbl = ttk.Label(text="Text")
         self.text_lbl.grid(column=0, row=0, sticky=tk.W, padx=10, pady=5)
 
-        self.text_ent = ttk.Entry(textvariable=text_str)
-        self.text_ent.grid(column=1, row=0, sticky=tk.W, padx=5, pady=5)
+        # Count
+        self.count_lbl = ttk.Label(text="Count")
+        self.count_lbl.grid(column=1, row=0, sticky=tk.W, padx=10, pady=5)
 
-        # Count:
-        self.count_lbl = ttk.Label(text="Count: ")
-        self.count_lbl.grid(column=0, row=1, sticky=tk.W, padx=10, pady=5)
+        # Inputs ######################
+        # Text
+        self.text_ent = ttk.Entry(textvariable=text_str, font=('Open Sans', 14))
+        self.text_ent.grid(column=0, row=1, sticky=tk.W, padx=10, pady=5)
 
-        self.count_ent = ttk.Spinbox(from_=0, to=2000000,textvariable=counter_num, wrap=False)
+        # Count
+        self.count_ent = ttk.Spinbox(from_=0, to=2000000,textvariable=counter_num, wrap=False, font=('Open Sans', 14))
         self.count_ent.grid(column=1, row=1, sticky=tk.W, padx=5, pady=5)
 
-        # Buttons
+        # Buttons ######################
         # Update
         self.update_btn = ttk.Button(text="Update", width=8, command=update_output)
         self.update_btn.grid(column=0, row=2, sticky=tk.W, padx=10, pady=15)
@@ -95,7 +98,7 @@ class App(tk.Tk):
         preview_lbl = ttk.Label(preview_lf, text="PREVIEW ")
         preview_lbl.pack(expand=True, fill="both", ipadx=20, ipady=20)
 
-        # Menu
+        # Menu ######################
         menubar = Menu(self, relief=FLAT, bd=0)
         self.config(menu=menubar)
 
@@ -115,7 +118,7 @@ class App(tk.Tk):
         menubar.add_cascade(label='Options', menu=options_m)
         menubar.add_cascade(label='Help', menu=help_m)
 
-        set_theme(self)
+        set_theme(self, 11)
 
 # Driver
 if __name__ == "__main__":
